@@ -652,9 +652,9 @@ $(function() {
         $(this).postLike();
     }); 
 
-    console.log("%c Louie %c","background:#24272A; color:#ffffff","","http://i94.me");
-    console.log("%c Github %c","background:#24272A; color:#ffffff","","https://github.com/louie-senpai"); 
-
+    console.log("%c 备注 %c","background:#24272A; color:#ffffff","","这是本人原博客站点的一个静态化备份");
+    console.log("%c Lengsir %c","background:#24272A; color:#ffffff","","https://www.lenget.com");
+    console.log("%c Github %c","background:#24272A; color:#ffffff","","https://github.com/Lengsir"); 
 });
 
 /*
