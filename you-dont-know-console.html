@@ -213,8 +213,7 @@ if (!!window.ActiveXObject || "ActiveXObject" in window) { //is IE?
 <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"腾云架雾"</span>);
 <span class="hljs-built_in">console</span>.groupEnd();
 </code></pre>
-<p>输出：</p>
-<p><img src="https://segmentfault.com/img/bVCmKx" alt="" /></p>
+
 <p>如果想要输出为折叠，我们可以使用 <code>console.groupCollapsed</code> ，用法和 <code>console.group</code> 类似。</p>
 <h4 id="-">查看对象信息</h4>
 <p>有时候我们需要打印出对象信息,可以使用 <code>console.log</code> 来进行简单的输出。</p>
@@ -239,8 +238,7 @@ if (!!window.ActiveXObject || "ActiveXObject" in window) { //is IE?
 ];
 <span class="hljs-built_in">console</span>.table(data);
 </code></pre>
-<p>输出：</p>
-<p><img src="https://segmentfault.com/img/bVCmKK" alt="" /></p>
+
 <p>但是如果想要看详细的对象信息，我们可以使用 <code>console.dir</code>，将一个 <code>JavaScript</code> 对象的所有属性和属性值显示成一个可交互的列表，它还能打印出函数等。</p>
 <pre><code class="hljs coffeescript"><span class="hljs-built_in">console</span>.dir(clear);
 </code></pre>
@@ -284,7 +282,7 @@ if (!!window.ActiveXObject || "ActiveXObject" in window) { //is IE?
 <span class="hljs-built_in">console</span>.profileEnd(<span class="hljs-string">"神机妙算"</span>);
 </code></pre>
 <p>输出会显示在 <code>profile</code></p>
-<p><img src="https://segmentfault.com/img/bVCmKN" alt="" /></p>
+
 <p>什么还是不够？你还想知道运行时的结果栈？可以可以，我们这还有一位 <code>console.trace</code> 哦。他可以看透大爷你的一局一动哦。 代码：</p>
 <pre><code class="hljs javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">add</span>(<span class="hljs-params">num</span>) </span>{
     <span class="hljs-keyword">if</span> (<span class="hljs-number">0</span> &lt; num) {
@@ -298,8 +296,7 @@ if (!!window.ActiveXObject || "ActiveXObject" in window) { //is IE?
 <span class="hljs-keyword">var</span> a =<span class="hljs-number">3</span>;
 add(<span class="hljs-number">3</span>);
 </code></pre>
-<p>输出：</p>
-<p><img src="https://segmentfault.com/img/bVCmKS" alt="" /></p>
+
 <h4 id="-">判断真假</h4>
 <p>平时我们在写代码是时候，经常需要判断一下当前值的真假情况，使用if或者三元表达式来达到目的。我们现在也可以使用 <code>console.assert</code> 来判断，该方法会在条件为错误时，返回一个 <code>console.error</code> 的输出。</p>
 <pre><code class="hljs coffeescript"><span class="hljs-built_in">console</span>.assert(<span class="hljs-number">1</span> == <span class="hljs-number">1</span>);
