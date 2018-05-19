@@ -1,14 +1,23 @@
+
+<!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-<base href="https://blog.lengsir.tk" />
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title itemprop="name">未找到页面 &#8211; Dreaming</title>
+<title itemprop="name">WP Editor.MD：一个好用的Markdown WP插件 &#8211; Dreaming</title>
+<link rel="shortcut icon" href="https://blog.lengsir.tk/wp-content/themes/Siren/images/favicon.ico"/> 
 <link rel='dns-prefetch' href='//s.w.org' />
-<link rel='stylesheet' id='siren-css'  href='https://blog.lengsir.tk/wp-content/themes/Siren/style.css?ver=2.0.6.170420' type='text/css' media='all' />
+<link rel='stylesheet' id='player-css'  href='https://blog.lengsir.tk/wp-content/plugins/EaPlayer-master/assets/css/eaplayer.css' type='text/css' media='all' />
+<link rel='stylesheet' id='siren-css'  href='https://blog.lengsir.tk/wp-content/themes/Siren-master/style.css' type='text/css' media='all' />
+<script type='text/javascript' src='https://blog.lengsir.tk/wp-includes/js/jquery/jquery.js'></script>
+<script type='text/javascript' src='https://blog.lengsir.tk/wp-includes/js/jquery/jquery-migrate.min.js'></script>
 <link rel='https://api.w.org/' href='https://blog.lengsir.tk/wp-json/' />
+<link rel='prev' title='JS实现网页动态标题' href='https://blog.lengsir.tk/dongtaibiaoti' />
+<link rel='next' title='你所不知道的 Console' href='https://blog.lengsir.tk/you-dont-know-console' />
+<link rel="canonical" href="https://blog.lengsir.tk/wpeditormd" />
+<link rel='shortlink' href='https://blog.lengsir.tk/?p=278' />
 <style type="text/css">
+.site-top .lower nav {display: block !important;}
 .author-profile i , .post-like a , .post-share .show-share , .sub-text , .we-info a , span.sitename , .post-more i:hover , #pagination a:hover , .post-content a:hover , .float-content i:hover{ color: #FE9600 }
 .feature i , .feature-title span , .download , .navigator i:hover , .links ul li:before , .ar-time i , span.ar-circle , .object , .comment .comment-reply-link , .siren-checkbox-radio:checked + .siren-checkbox-radioInput:after { background: #FE9600 }
 ::-webkit-scrollbar-thumb { background: #FE9600 }
@@ -17,28 +26,391 @@
 .comments .comments-main {display:block !important;}
 .comments .comments-hidden {display:none !important;}
 </style>
-<link rel="icon" href="https://blog.lengsir.tk/wp-content/uploads/2016/12/cropped-danbo-32x32.jpg" sizes="32x32" />
-<link rel="icon" href="https://blog.lengsir.tk/wp-content/uploads/2016/12/cropped-danbo-192x192.jpg" sizes="192x192" />
-<link rel="apple-touch-icon-precomposed" href="https://blog.lengsir.tk/wp-content/uploads/2016/12/cropped-danbo-180x180.jpg" />
-<meta name="msapplication-TileImage" content="https://blog.lengsir.tk/wp-content/uploads/2016/12/cropped-danbo-270x270.jpg" />
-		<style type="text/css" id="wp-custom-css">
-			/*
-您可以在此处加入您的CSS。
-
-点击上方的帮助图标来了解更多。
-*/
-		</style>
-	</head>
-<body class="error404 hfeed">
-<section class="error-404 not-found">
-<div class="error-img">
-<img src="https://blog.lengsir.tk/wp-content/themes/Siren/images/404.jpg">
+<script type="text/javascript">
+if (!!window.ActiveXObject || "ActiveXObject" in window) { //is IE?
+  alert('请抛弃万恶的IE系列浏览器吧。');
+}
+</script>
+</head>
+<body class="post-template-default single single-post postid-278 single-format-standard logged-in">
+	<section id="main-container">
+				<div class="headertop filter-dim">
+			<figure id="centerbg" class="centerbg" style="background-image: url(https://e.lenget.com/pic/025.jpg);">
+		<div class="focusinfo">
+   			     <div class="header-tou"><a href="https://blog.lengsir.tk" ><img src="https://e.lenget.com/wordpress/wp-content/uploads/xuan640.jpg"></a></div>
+	  			<div class="header-info"><p>O ever youthful, O ever weeping.</p></div>
+		<div class="top-social">
+				<li class="wechat"><a href="#"><img src="https://blog.lengsir.tk/wp-content/themes/Siren/images/sns/wechat.png"/></a>
+			<div class="wechatInner">
+				<img src="https://e.lenget.com/wordpress/wp-content/uploads/2017/01/qrcode_for_gh_39df86536874_430-1.jpg" alt="微信公众号">
+			</div>
+		</li>
+		 
+				<li><a href="https://weibo.com/277994124" target="_blank" class="social-sina" title="sina"><img src="https://blog.lengsir.tk/wp-content/themes/Siren/images/sns/sina.png"/></a></li>
+						<li class="qq"><a href="//wpa.qq.com/msgrd?v=3&uin=841364852&site=qq&menu=yes" target="_blank" title="Initiate chat ?"><img src="https://blog.lengsir.tk/wp-content/themes/Siren/images/sns/qq.png"/></a></li>
+			
+				<li><a href="https://user.qzone.qq.com/841364852" target="_blank" class="social-qzone" title="qzone"><img src="https://blog.lengsir.tk/wp-content/themes/Siren/images/sns/qzone.png"/></a></li>
+						<li><a href="https://github.com/Lengsir" target="_blank" class="social-github" title="github"><img src="https://blog.lengsir.tk/wp-content/themes/Siren/images/sns/github.png"/></a></li>
+			
+			
+								<li><a href="https://music.163.com/#/user/home?id=116819880" target="_blank" class="social-wangyiyun" title="CloudMusic"><img src="https://blog.lengsir.tk/wp-content/themes/Siren/images/sns/wangyiyun.png"/></a></li>
+						<li><a href="https://twitter.com/leng_sir" target="_blank" class="social-wangyiyun" title="Twitter"><img src="https://blog.lengsir.tk/wp-content/themes/Siren/images/sns/twitter.png"/></a></li>
+			
+				<li><a href="https://www.facebook.com/lengxh" target="_blank" class="social-wangyiyun" title="Facebook"><img src="https://blog.lengsir.tk/wp-content/themes/Siren/images/sns/facebook.png"/></a></li>
+			
+							
+				
+	  	</div>		 
+	</div>
+	</figure>
+<div id="video-container" style=""><video id="bgvideo" class="video" video-name="" src="" width="auto" preload="auto"></video><div id="video-btn" class="loadvideo videolive"></div><div id="video-add"></div><div class="video-stu"></div></div>		</div>	
+				<div id="page" class="site wrapper">
+			<header class="site-header" role="banner">
+				<div class="site-top">
+					<div class="site-branding">
+												<h1 class="site-title"><a href="https://blog.lengsir.tk" >Dreaming</a></h1>	
+						<!-- logo end -->
+					</div><!-- .site-branding -->
+					    <div class="header-user-avatar">
+      <img src="https://e.lenget.com/wordpress/wp-content/uploads/xuan640.jpg" width="30" height="30">
+      <div class="header-user-menu">
+        <div class="herder-user-name">Signed in as 
+          <div class="herder-user-name-u">Master</div>
+        </div>
+        <div class="user-menu-option">
+                      <a href="https://blog.lengsir.tk/wp-admin/" target="_top">管理中心</a>
+            <a href="https://blog.lengsir.tk/wp-admin/post-new.php" target="_top">撰写文章</a>
+                    <a href="https://blog.lengsir.tk/wp-admin/profile.php" target="_top">个人资料</a>
+          <a href="https://blog.lengsir.tk/wp-login.php?action=logout&amp;redirect_to=https%3A%2F%2Flenget.com&amp;_wpnonce=cd1df3defd" target="_top">退出登录</a>
+        </div>
+      </div>
+    </div>
+  					<div class="searchbox"><i class="iconfont js-toggle-search iconsearch">&#xe65c;</i></div>
+										<div class="lower">						<nav><ul id="menu-%e6%a0%87%e9%a2%98%e6%a0%8f" class="menu"><li><a href="https://blog.lengsir.tk/welcome/">起始页</a></li>
+<li><a rel="nofllow" href="https://blog.lengsir.tk/archives/">归档</a>
+<ul class="sub-menu">
+	<li><a href="https://blog.lengsir.tk/articles/">文摘</a></li>
+	<li><a href="https://blog.lengsir.tk/rizhi/">日志</a></li>
+	<li class="current-post-ancestor current-menu-parent"><a href="https://blog.lengsir.tk/exp/">经验</a></li>
+	<li><a href="https://blog.lengsir.tk/works/">作品</a></li>
+</ul>
+</li>
+<li><a rel="nofllow" href="https://blog.lengsir.tk/links/">邻居</a>
+<ul class="sub-menu">
+	<li><a rel="nofllow" href="https://em.lenget.com">点滴记忆</a></li>
+	<li><a href="https://blog.lengsir.tk/findyourself/">发现自己</a></li>
+	<li><a href="https://pages.lenget.com/links">友链申请</a></li>
+	<li><a href="https://em.lenget.com/tools/bizhi">毒霸壁纸</a></li>
+</ul>
+</li>
+<li><a href="https://blog.lengsir.tk/aboutweb/">关于</a>
+<ul class="sub-menu">
+	<li><a href="https://e.lenget.com/">个人页面</a></li>
+	<li><a href="https://blog.lengsir.tk/sitemap/">网站地图</a></li>
+</ul>
+</li>
+</ul></nav><!-- #site-navigation -->
+					</div>	
+				</div>
+			</header><!-- #masthead -->
+			<div class="blank"></div>		    <div id="content" class="site-content">	<div id="primary" class="content-area">
+		<main id="main" class="site-main" role="main">
+		
+<article id="post-278" class="post-278 post type-post status-publish format-standard has-post-thumbnail hentry category-exp">
+		<div class="entry-content">
+		<p>转载自</p>
+<p>WP Editor.MD：一个好用的Markdown WP插件 | 苏城一只猫</p>
+<p><a href="https://iiong.com/wordpress-plugins-wp-editormd.html" target="_blank" rel="nofollow" >https://iiong.com/wordpress-plugins-wp-editormd.html</a></p>
+<h3 id="-">前言</h3>
+<p>Markdown大法吼</p>
+<p>接触Markdown差不多有大半年了，真是越来越爱~</p>
+<p>因为蛋疼的<a title="查看更多关于 WordPress 的文章" href="https://iiong.com/tag/wordpress" target="_blank" rel="nofollow" >WordPress</a>不支持Markdown换了各种博客系统：Typecho，Hexo，Ghost，PageKit等等...包括自己开发的一套博客系统。</p>
+<p>&nbsp;</p>
+<p>然后溜达一圈又回来了，无他，目前就觉得WordPress相对而言比较完美的。所以现在博客用那个markdown.js库编辑器。好是好，但是丑啊...</p>
+<p>一直使用Editor.md编辑器，真心好使。连我的为知笔记都是用它：</p>
+<p><a href="https://e.lenget.com/wp/wp-content/uploads/2017/01/wp-content-uploads-2017-01-20170114214615.png" alt="WP Editor.MD：一个好用的Markdown WP插件" title="WP Editor.MD：一个好用的Markdown WP插件" target="_blank"  rel="nofollow" ><img class="alignnone wp-image-283 size-full" src="https://e.lenget.com/wp/wp-content/uploads/2017/01/wp-content-uploads-2017-01-20170114214615.png" alt="" width="1920" height="1047" /></a></p>
+<p>本来16年中旬就想弄的，一直就拖到现在...主要之前找不到前台渲染的方案。不过前段时间灵感一闪，有了办法，没想到成功了。</p>
+<h3 id="-">说明</h3>
+<p>WP Editor.MD是一个漂亮又实用的在线Markdown文档编辑器。</p>
+<p>基于<a href="https://github.com/pandao/editor.md" target="_blank" rel="nofollow">Editor.md</a>构建对WordPress平台的支持。</p>
+<p>使用WordPress <a href="https://jetpack.me/support/markdown/" target="_blank" rel="nofollow">Jetpack</a>的Markdown模块来解析和保存内容。</p>
+<h3 id="-">特征</h3>
+<ul>
+<li>支持实时预览、代码插入、代码折叠等功能；</li>
+<li><del>支持 <a href="https://www.emoji-cheat-sheet.com/" target="_blank" rel="nofollow">Emoji 表情</a></del></li>
+<li><del>支持 <a href="https://pandao.github.io/editor.md/examples/toc.html" target="_blank" rel="nofollow">ToC（Table of Contents）</a>、<a href="https://pandao.github.io/editor.md/examples/task-lists.html" target="_blank" rel="nofollow">Github Task lists</a> 等 Markdown 扩展语法</del></li>
+<li><del>支持 TeX 科学公式（基于 <a href="https://khan.github.io/KaTeX/" target="_blank" rel="nofollow">KaTeX</a>）、流程图 <a href="https://pandao.github.io/editor.md/examples/flowchart.html" target="_blank" rel="nofollow">Flowchart</a> 和 时序图 <a href="https://pandao.github.io/editor.md/examples/sequence-diagram.html" target="_blank" rel="nofollow">Sequence Diagram</a></del></li>
+</ul>
+<p><strong>以上划线的目前不支持，未来版本支持</strong></p>
+<h3 id="-">安装</h3>
+<p>怎么安装你真的真的不会吗？</p>
+<p>不过，请把文件夹重命名为：<code>WP-Editor.MD</code>，否则会出现不正常的现象！</p>
+<p>可能会有提交WordPress官方的计划。</p>
+<h3 id="-">下载</h3>
+<p>Github：<a href="https://github.com/JaxsonWang/WP-Editor.MD" target="_blank" rel="nofollow">WP-Editor.MD</a></p>
+<p>Coding：<a href="https://coding.net/u/JaxsonWang/p/WP-Editor.MD/git" target="_blank" rel="nofollow">WP-Editor.MD</a></p>
+<p>点击下载：</p>
+<p>国外：<a href="https://github.com/JaxsonWang/WP-Editor.MD/archive/master.zip" target="_blank" rel="nofollow">Github</a></p>
+<p>国内：<a href="https://coding.net/u/JaxsonWang/p/WP-Editor.MD/git/archive/master" target="_blank" rel="nofollow">Coding</a></p>
+<h3 id="-">截图</h3>
+<p><a href="https://e.lenget.com/wp/wp-content/uploads/2017/01/wp-content-uploads-2017-01-editor.md_.png" alt="WP Editor.MD：一个好用的Markdown WP插件" title="WP Editor.MD：一个好用的Markdown WP插件" target="_blank"  rel="nofollow" ><img class="aligncenter wp-image-284 size-full" src="https://e.lenget.com/wp/wp-content/uploads/2017/01/wp-content-uploads-2017-01-editor.md_.png" alt="" width="1059" height="845" /></a></p>
+<p><a href="https://e.lenget.com/wp/wp-content/uploads/2017/01/wp-content-uploads-2017-01-WP-Editor.MD-post.png" alt="WP Editor.MD：一个好用的Markdown WP插件" title="WP Editor.MD：一个好用的Markdown WP插件" target="_blank"  rel="nofollow" ><img class="aligncenter wp-image-285 size-full" src="https://e.lenget.com/wp/wp-content/uploads/2017/01/wp-content-uploads-2017-01-WP-Editor.MD-post.png" alt="" width="1900" height="941" /></a></p>
+<h2 id="-">更新日志</h2>
+<p>/&gt; 1.0</p>
+<ul>
+<li>第一版本</li>
+</ul>
+<h3 id="-">反馈</h3>
+<p>如果有BUG请在本站文章下面的评论框提交，谢谢。</p>
+<p>欢迎捐赠！</p>
+			</div><!-- .entry-content -->
+	  <div class="single-reward">
+    <div class="reward-open">赏
+      <div class="reward-main">
+        <ul class="reward-row">
+          <li class="alipay-code"><img src="https://e.lenget.com/wordpress/wp-content/uploads/2017/04/alipay.jpg"></li><li class="wechat-code"><img src="https://e.lenget.com/wordpress/wp-content/uploads/Screenshot_20161228-190836.jpg"></li>        </ul>
+      </div>
+    </div>
+  </div>
+  	<footer class="post-footer">
+	<div class="post-lincenses"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/"  target="_blank" rel="nofollow">Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)</a></div>
+	<div class="post-tags">
+			</div>
+    
+<div class="post-like">
+<a href="javascript:;" data-action="ding" data-id="278" class="specsZan ">
+	<i class="iconfont">&#xe669;</i> <span class="count">
+		0</span>
+	</a>
 </div>
-<div class="err-button back">
-<a id="golast" href=javascript:history.go(-1);>返回上一页</a>
-<a id="gohome" href="https://blog.lengsir.tk">返回主页</a>  
+		
+<div class="post-share">
+<ul class="sharehidden">
+	<li><a href="https://api.qrserver.com/v1/create-qr-code/?size=250x250&margin=13&data=https://blog.lengsir.tk/wpeditormd&title=WP Editor.MD：一个好用的Markdown WP插件" onclick="window.open(this.href, 'renren-share', 'width=260,height=260');return false;" class="s-weixin"><img src="https://blog.lengsir.tk/wp-content/themes/Siren/images/sns/wechat.png"/></a></li>
+	<li><a href="https://connect.qq.com/widget/shareqq/index.html?url=https://blog.lengsir.tk/wpeditormd&title=WP Editor.MD：一个好用的Markdown WP插件" onclick="window.open(this.href, 'weibo-share', 'width=730,height=600');return false;" class="s-qq"><img src="https://blog.lengsir.tk/wp-content/themes/Siren/images/sns/qq.png"/></a></li>
+	<li><a href="https://www.douban.com/recommend/?url=https://blog.lengsir.tk/wpeditormd&title=WP Editor.MD：一个好用的Markdown WP插件" onclick="window.open(this.href, 'renren-share', 'width=450,height=330');return false;" class="s-douban"><img src="https://blog.lengsir.tk/wp-content/themes/Siren/images/sns/douban.png" alt="推荐到豆瓣" /></a></li>
+	<li><a href="https://service.weibo.com/share/share.php?url=https://blog.lengsir.tk/wpeditormd&title=WP Editor.MD：一个好用的Markdown WP插件" onclick="window.open(this.href, 'weibo-share', 'width=550,height=235');return false;" class="s-sina"><img src="https://blog.lengsir.tk/wp-content/themes/Siren/images/sns/sina.png"/></a></li>
+	<li><a href="https://twitter.com/home?status=分享一篇文章给你们：WP Editor.MD：一个好用的Markdown WP插件 https://blog.lengsir.tk/wpeditormd&title=WP Editor.MD：一个好用的Markdown WP插件" onclick="window.open(this.href, 'renren-share', 'width=490,height=260');return false;" class="s-douban"><img src="https://blog.lengsir.tk/wp-content/themes/Siren/images/sns/twitter.png"/></a></li>
+	</ul>
+	<i class="iconfont show-share">&#xe6eb;</i>
 </div>
+	</footer><!-- .entry-footer -->
+</article><!-- #post-## --><section class="post-squares nextprev">
+	<div class="post-nepre half previous">
+		<a href="https://blog.lengsir.tk/dongtaibiaoti" rel="prev"><div class="background" style="background-image:url(https://cherryml.com/wp-content/uploads/2016/12/a1.png);"></div><span class="label">Previous Post</span><div class="info"><h3>JS实现网页动态标题</h3><hr></div></a>	</div>
+	<div class="post-nepre half next">
+		<a href="https://blog.lengsir.tk/you-dont-know-console" rel="next"><div class="background" style="background-image:url(https://segmentfault.com/img/bVCmKx);"></div><span class="label">Next Post</span><div class="info"><h3>你所不知道的 Console</h3><hr></div></a>	</div>
 </section>
+	<section class="author-profile">
+		<div class="info" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+			<a href="https://blog.lengsir.tk/author/Master/" class="profile gravatar"><img src="https://e.lenget.com/wordpress/wp-content/uploads/xuan640.jpg" itemprop="image" alt="Master" height="70" width="70"></a>
+			<div class="meta">
+				<span class="title">Author</span>	
+				<h3 itemprop="name">
+					<a href="https://blog.lengsir.tk/author/Master/" itemprop="url" rel="author">Master</a>
+				</h3>						
+			</div>
+		</div>
+		<hr>
+		<p><i class="iconfont">&#xe761;</i>O ever youthful, O ever weeping.</p>
+	</section>
+
+		</main><!-- #main -->
+	</div><!-- #primary -->
+	</div><!-- #content -->
+
+	
+	<section id="comments" class="comments">
+
+		<div class="commentwrap comments-hidden">
+			<div class="notification"><i class="iconfont">&#xe731;</i>查看评论 -
+			<span class="noticom">NOTHING </span>
+			</div>
+		</div>
+
+		<div class="comments-main">
+		 <h3 id="comments-list-title">Comments | <span class="noticom">NOTHING </span></h3> 
+		<div id="loading-comments"><span></span></div>
+			
+									<div class="commentwrap">
+						<div class="notification-hidden"><i class="iconfont">&#xe731;</i> 暂无评论</div>
+					
+					</div>
+				
+			
+				<div id="respond" class="comment-respond">
+		<h3 id="reply-title" class="comment-reply-title"> <small><a rel="nofollow" id="cancel-comment-reply-link" href="/wpeditormd#respond" style="display:none;">Cancel Reply</a></small></h3>			<form action="https://blog.lengsir.tk/wp-comments-post.php" method="post" id="commentform" class="comment-form" novalidate>
+				<p class="logged-in-as"><a href="https://blog.lengsir.tk/wp-admin/profile.php" aria-label="已登入为Master。编辑您的个人资料。">已登入为Master</a>。<a href="https://blog.lengsir.tk/wp-login.php?action=logout&amp;redirect_to=https%3A%2F%2Flenget.com%2Fwpeditormd&amp;_wpnonce=cd1df3defd">登出？</a></p><textarea placeholder="Type in your comments ..." name="comment" class="commentbody" id="comment" rows="5" tabindex="4"></textarea><p class="form-submit"><input name="submit" type="submit" id="submit" class="submit" value="Post Comment" /> <input type='hidden' name='comment_post_ID' value='278' id='comment_post_ID' />
+<input type='hidden' name='comment_parent' id='comment_parent' value='0' />
+</p><input type="hidden" id="_wp_unfiltered_html_comment_disabled" name="_wp_unfiltered_html_comment_disabled" value="221361f4d1" /><script>(function(){if(window===window.parent){document.getElementById('_wp_unfiltered_html_comment_disabled').name='_wp_unfiltered_html_comment';}})();</script>
+			</form>
+			</div><!-- #respond -->
+	
+		</div>
+
+
+	</section>
+
+	</div><!-- #page Pjax container-->
+  <div align="center"><img src="https://e.lenget.com/wordpress/wp-content/uploads/2018/05/qun.png" width="" height=""></div> 
+	<footer id="colophon" class="site-footer" role="contentinfo">
+		<div class="site-info">
+			<div class="footertext">
+				<p class="foo-logo" style="background-image: url('https://blog.lengsir.tk/wp-content/themes/Siren/images/f-logo.png');"></p>
+				<p>&copy; 2018 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="nofollow">CC BY-NC-SA 4.0</a>
+<br>
+<a href="http://www.miitbeian.gov.cn/" target="_blank">No. 17000966, ICP, Hubei</a>
+<br>
+Always Youthful , Always Weeping . Carpe Diem and Do what I like.</p>
+			</div>
+			<div class="footer-device">
+			<a href="/sitemap" target="_blank" rel="nofollow">Sitemap</a> &nbsp; <a href="http://www.akina.pw/themeakina" rel="designer" target="_blank" rel="nofollow">Theme</a> &nbsp; <a href="https://wordpress.org/" target="_blank" rel="nofollow">WordPress</a> &nbsp; <a href="http://tongji.baidu.com/web/welcome/ico?s=f1b6fcec8ea70f6dd75bad4562aaa1ab" target="_blank" rel="nofollow">Statistics</a>			</div>
+		</div><!-- .site-info -->
+	</footer><!-- #colophon -->
+	<div class="openNav">
+		<div class="iconflat">	 
+			<div class="icon"></div>
+		</div>
+		<div class="site-branding">
+						<h1 class="site-title"><a href="https://blog.lengsir.tk" >Dreaming</a></h1>
+					</div>
+	</div><!-- m-nav-bar -->
+	</section><!-- #section -->
+	<!-- m-nav-center -->
+	<div id="mo-nav">
+		<div class="m-avatar">
+						<img src="https://e.lenget.com/wordpress/wp-content/uploads/xuan640.jpg">
+		</div>
+		<div class="m-search">
+			<form class="m-search-form" method="get" action="https://blog.lengsir.tk" role="search">
+				<input class="m-search-input" type="search" name="s" placeholder="搜索..." required>
+			</form>
+		</div>
+		<ul id="menu-%e6%a0%87%e9%a2%98%e6%a0%8f-1" class="menu"><li><a href="https://blog.lengsir.tk/welcome/">起始页</a></li>
+<li><a rel="nofllow" href="https://blog.lengsir.tk/archives/">归档</a>
+<ul class="sub-menu">
+	<li><a href="https://blog.lengsir.tk/articles/">文摘</a></li>
+	<li><a href="https://blog.lengsir.tk/rizhi/">日志</a></li>
+	<li class="current-post-ancestor current-menu-parent"><a href="https://blog.lengsir.tk/exp/">经验</a></li>
+	<li><a href="https://blog.lengsir.tk/works/">作品</a></li>
+</ul>
+</li>
+<li><a rel="nofllow" href="https://blog.lengsir.tk/links/">邻居</a>
+<ul class="sub-menu">
+	<li><a rel="nofllow" href="https://em.lenget.com">点滴记忆</a></li>
+	<li><a href="https://blog.lengsir.tk/findyourself/">发现自己</a></li>
+	<li><a href="https://pages.lenget.com/links">友链申请</a></li>
+	<li><a href="https://em.lenget.com/tools/bizhi">毒霸壁纸</a></li>
+</ul>
+</li>
+<li><a href="https://blog.lengsir.tk/aboutweb/">关于</a>
+<ul class="sub-menu">
+	<li><a href="https://e.lenget.com/">个人页面</a></li>
+	<li><a href="https://blog.lengsir.tk/sitemap/">网站地图</a></li>
+</ul>
+</li>
+</ul>	</div><!-- m-nav-center end -->
+	<a href="#" class="cd-top"></a>
+	<!-- search start -->
+	<form class="js-search search-form search-form--modal" method="get" action="https://blog.lengsir.tk" role="search">
+		<div class="search-form__inner">
+			<div>
+				<p class="micro mb-">输入后按回车搜索 ...</p>
+				<i class="iconfont">&#xe65c;</i>
+				<input class="text-input" type="search" name="s" placeholder="Search" required>
+			</div>
+		</div>
+		<div class="search_close"></div>
+	</form>
+	<!-- search end -->
+<div class="player-layer" style="background: #25928e">
+	<div class="player-container">
+		<div class="player-hide-box">
+			<section class="player-header">
+				<div class="play-title">EA PLAYER & <span class="album-name"></span></div>
+				<div class="player-music-search">
+					<form method="get" class="music-search-form" action="https://blog.lengsir.tk" role="search">
+						<span class="ea-icon ea-search"></span>
+						<input type="search" name="ms" class="music-search-input" size="26" placeholder="搜索 ..." />
+					</form>
+				</div>
+			</section>
+			<section class="player-info">
+				<div class="history-record">
+					<h4>历史记录 <span>[ 注意：部分数据仅限于当前浏览器 ]</span><span class="empty-history">清空</span></h4>
+					<ul class="history-list"></ul>
+				</div>
+				<div class="current-record">
+					<ul class="play-list"></ul>
+				</div>
+				<div class="lyric-text">
+					<div id="lrcWrap" class="lrc-wrap lrc-wrap-open">
+						<div id="lrcBox" class="lrc-box">
+							<div id="lrc_2"></div>
+						</div>
+					</div>
+					<div class="lyric-script"></div>
+				</div>
+				<div class="cover-photo">
+					<div class="cover-disc"><img src="https://blog.lengsir.tk/wp-content/plugins/EaPlayer-master/images/bg.jpg"></div>
+				</div>
+				<div class="bg-player"></div>
+				<div class="bg-player-mask"></div>
+			</section>
+		</div>
+		<div class="player-control">
+			<div class="btn-prev ea-icon"><i class="ea-prev"></i></div>
+			<div class="btn-play ea-icon"><i class="ea-play"></i></div>
+			<div class="btn-next ea-icon"><i class="ea-next"></i></div>
+			<div class="player-progress">
+				<div class="progress-sider">
+					<div class="sider-loaded"></div>
+					<div class="sider-pace"></div>
+				</div>
+				<div class="song-info">
+					<span class="song-title"></span>
+					<span class="song-artist"></span>
+				</div>
+			</div>
+			<div class="player-timer">00:00/00:00</div>
+			<div class="btn-mode ea-icon"><i class="ea-all"></i></div>
+			<div class="btn-download ea-icon"><i class="ea-download"></i></div>
+			<div class="btn-enlarge ea-icon"><i class="ea-enlarge"></i></div>
+			<div class="player-volume ea-icon">
+				<div class="volume-mute"><i class="ea-volume"></i></div>
+				<div class="volume-sider">
+					<div class="sider-pace"></div>
+				</div>
+			</div>
+			<div class="btn-eaplayer">
+				<i class="ea-icon ea-right"></i>
+			</div>
+		</div>
+	</div><!-- .player-container ##-->
+	<div id="key" data-id="550564574" data-type="0" data-source="netease" data-api="https://blog.lengsir.tk/wp-content/plugins/EaPlayer-master" data-autoplay="true" data-shuffle="" data-search="tencent"></div>
+	<audio id="audio" type="audio/mpeg"></audio>
+</div><script type='text/javascript' src='https://blog.lengsir.tk/wp-content/plugins/EaPlayer-master/assets/js/player-base.min.js'></script>
+<script type='text/javascript' src='https://blog.lengsir.tk/wp-content/plugins/EaPlayer-master/assets/js/eaplayer.min.js'></script>
+<script type='text/javascript' src='https://blog.lengsir.tk/wp-content/themes/Siren/js/jquery.min.js'></script>
+<script type='text/javascript' src='https://blog.lengsir.tk/wp-content/themes/Siren/js/jquery.pjax.js'></script>
+<script type='text/javascript' src='https://blog.lengsir.tk/wp-content/themes/Siren/js/input.min.js'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var Poi = {"pjax":"1","movies":{"url":"https:\/\/s.lenget.com\/mv","name":"\u6797\u4fca\u5091 JJ Lin - \u53ef\u60dc\u6c92\u5982\u679c If Only (\u83ef\u7d0d Official \u9ad8\u756b\u8cea HD \u5b98\u65b9\u5287\u60c5\u7248 MV)","live":"open"},"windowheight":"auto","codelamp":"close","ajaxurl":"https:\/\/lenget.com\/wordpress\/wp-admin\/admin-ajax.php","order":"desc","formpostion":"bottom"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://blog.lengsir.tk/wp-content/themes/Siren/js/app.js'></script>
+<script type='text/javascript' src='https://blog.lengsir.tk/wp-includes/js/comment-reply.min.js'></script>
+<div class="site-statistics">
+<script type="text/javascript">var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?f1b6fcec8ea70f6dd75bad4562aaa1ab";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+
+</script>
+</div>
 </body>
-
-
+</html>
