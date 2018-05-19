@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<base href="https://blog.lengsir.tk" />
+
+<!--<link rel='stylesheet' id='siren-css'  href='https://e.lenget.com/wordpress/wp-content/themes/Siren/style.css?ver=2.0.6.170420' type='text/css' media='all' />-->
+  <!--
+  <script type="text/javascript">
+if (document.location.protocol != "https:") { 
+        location.href = location.href.replace(/^http:/,"https:");
+}
+</script>-->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title itemprop="name">你所不知道的 Console &#8211; Dreaming</title>
+<link rel="shortcut icon" href="https://blog.lengsir.tk/wp-content/themes/Siren/images/favicon.ico"/> 
+<link rel='dns-prefetch' href='//s.w.org' />
+<link rel='stylesheet' id='siren-css'  href='https://blog.lengsir.tk/wp-content/themes/Siren/style.css?ver=2.0.6.170420' type='text/css' media='all' />
+<link rel='https://api.w.org/' href='https://blog.lengsir.tk/wp-json/' />
+<link rel='prev' title='树莓派上的软件安装和卸载命令汇总' href='https://blog.lengsir.tk/smpml.html' />
+<link rel='next' title='WordPress Theme Siren' href='https://blog.lengsir.tk/wordpress-theme-siren.html' />
+<link rel="canonical" href="https://blog.lengsir.tk/you-dont-know-console.html" />
+<link rel='shortlink' href='https://blog.lengsir.tk/?p=346' />
+<style type="text/css">
+.author-profile i , .post-like a , .post-share .show-share , .sub-text , .we-info a , span.sitename , .post-more i:hover , #pagination a:hover , .post-content a:hover , .float-content i:hover{ color: #FE9600 }
+.feature i , .feature-title span , .download , .navigator i:hover , .links ul li:before , .ar-time i , span.ar-circle , .object , .comment .comment-reply-link , .siren-checkbox-radio:checked + .siren-checkbox-radioInput:after { background: #FE9600 }
+::-webkit-scrollbar-thumb { background: #FE9600 }
+.download , .navigator i:hover , .link-title , .links ul li:hover , #pagination a:hover , .comment-respond input[type='submit']:hover { border-color: #FE9600 }
+.entry-content a:hover , .site-info a:hover , .comment h4 a , #comments-navi a.prev , #comments-navi a.next , .comment h4 a:hover , .site-top ul li a:hover , .entry-title a:hover , #archives-temp h3 , span.page-numbers.current , .sorry li a:hover , .site-title a:hover , i.iconfont.js-toggle-search.iconsearch:hover , .comment-respond input[type='submit']:hover { color: #FE9600 }
+.comments .comments-main {display:block !important;}
+.comments .comments-hidden {display:none !important;}
+</style>
+<link rel="icon" href="https://blog.lengsir.tk/wp-content/uploads/2016/12/cropped-danbo-32x32.jpg" sizes="32x32" />
+<link rel="icon" href="https://blog.lengsir.tk/wp-content/uploads/2016/12/cropped-danbo-192x192.jpg" sizes="192x192" />
+<link rel="apple-touch-icon-precomposed" href="https://blog.lengsir.tk/wp-content/uploads/2016/12/cropped-danbo-180x180.jpg" />
+<meta name="msapplication-TileImage" content="https://blog.lengsir.tk/wp-content/uploads/2016/12/cropped-danbo-270x270.jpg" />
+		<style type="text/css" id="wp-custom-css">
+			/*
+您可以在此处加入您的CSS。
+
+点击上方的帮助图标来了解更多。
+*/
+		</style>
+	<!--
+<script type="text/javascript">
+if (!!window.ActiveXObject || "ActiveXObject" in window) { //is IE?
+  alert('请抛弃万恶的IE系列浏览器吧。');
+}
+</script>
+-->
+</head>
+<body class="post-template-default single single-post postid-346 single-format-standard">
+	<section id="main-container">
+				<div class="headertop filter-nothing">
+			<figure id="centerbg" class="centerbg" style="">
+		<div class="focusinfo">
+   		         <div class="header-tou" ><a href="https://blog.lengsir.tk"><img src="https://blog.lengsir.tk/wp-content/themes/Siren/images/avatar.jpg"></a></div>	
+      			<div class="header-info"><p>以此为傲，以此谋生，以此热爱且不忘初衷。</p></div>
+		<div class="top-social">
+		 
+					
+					
+			
+									
+			
+							
+				
+	  	</div>		 
+	</div>
+	</figure>
+<div id="video-container" style="display:none;"><video id="bgvideo" class="video" video-name="" src="" width="auto" preload="auto"></video><div id="video-btn" class="loadvideo videolive"></div><div id="video-add"></div><div class="video-stu"></div></div>		</div>	
+				<div id="page" class="site wrapper">
+			<header class="site-header" role="banner">
+				<div class="site-top">
+					<div class="site-branding">
+												<h1 class="site-title"><a href="https://blog.lengsir.tk" >Dreaming</a></h1>	
+						<!-- logo end -->
+					</div><!-- .site-branding -->
+					  <div class="header-user-avatar">
+    <a href="https://blog.lengsir.tk/wp-login.php">
+      <img src="https://blog.lengsir.tk/wp-content/themes/Siren/images/none.png" width="30" height="30">
+    </a>
+    <div class="header-user-menu">
+      <div class="herder-user-name no-logged">Whether to log in now ?
+        <a href="https://blog.lengsir.tk/wp-login.php">Sign in</a>
+      </div>
+    </div>
+  </div>
+  					<div class="lower">						<div id="show-nav" class="showNav">
+							<div class="line line1"></div>
+							<div class="line line2"></div>
+							<div class="line line3"></div>
+						</div>						<nav><ul id="menu-%e6%a0%87%e9%a2%98%e6%a0%8f" class="menu"><li><a href="https://blog.lengsir.tk/welcome/">起始页</a>
+<ul class="sub-menu">
+	<li><a href="https://blog.lengsir.tk/login/">登陆</a></li>
+	<li><a href="https://blog.lengsir.tk/register/">注册</a></li>
+</ul>
+</li>
+<li><a rel="nofllow" href="https://blog.lengsir.tk/archives/">归档</a>
+<ul class="sub-menu">
+	<li><a href="https://blog.lengsir.tk/articles/">文摘</a></li>
+	<li><a href="https://blog.lengsir.tk/rizhi/">日志</a></li>
+	<li class="current-post-ancestor current-menu-parent"><a href="https://blog.lengsir.tk/xp/">经验</a></li>
+	<li><a href="https://blog.lengsir.tk/works/">Works</a></li>
+</ul>
+</li>
+<li><a rel="nofllow" href="https://blog.lengsir.tk/about/">关于</a>
+<ul class="sub-menu">
+	<li><a href="/me">个人页</a></li>
+</ul>
+</li>
+<li><a rel="nofllow" href="https://blog.lengsir.tk/links/">邻居</a>
+<ul class="sub-menu">
+	<li><a rel="nofllow" href="https://em.lenget.com">易梦空间</a></li>
+	<li><a href="https://blog.lengsir.tk/music/">音乐搜索</a></li>
+	<li><a href="https://blog.lengsir.tk/sitemap/">网站地图</a></li>
+	<li><a href="https://em.lenget.com/tools/bizhi/">毒霸壁纸</a></li>
+</ul>
+</li>
+<li><a href="https://blog.lengsir.tk/findyourself/">发现自己</a></li>
+</ul></nav><!-- #site-navigation -->
+					</div>	
+				</div>
+			</header><!-- #masthead -->
+			<div class="blank"></div>		    <div id="content" class="site-content">	<div id="primary" class="content-area">
+		<main id="main" class="site-main" role="main">
+		
+<article id="post-346" class="post-346 post type-post status-publish format-standard hentry category-xp">
+		<header class="entry-header">
+		<h1 class="entry-title">你所不知道的 Console</h1>
+		<p class="entry-census">发布于 2017-03-08&nbsp;&nbsp;105 次阅读</p>
+		<hr>
+	</header><!-- .entry-header -->
+		<div class="entry-content">
+		<header class="entry-header page-header">
+<h1 class="entry-title page-title">你所不知道的 Console</h1>
+<div class="entry-meta"><time class="entry-date published updated" datetime="2016-10-21T23:02:48+00:00">2016年10月21日</time> <span class="separator">/</span> 267次浏览</div>
+</header>
+<div class="entry-content clearfix">
+<h3 id="1-">1.凡人视角</h3>
+<h4 id="-">打印字符串</h4>
+<p>代码：</p>
+<pre><code class="hljs coffeescript"><span class="hljs-built_in">console</span>.log(<span class="hljs-string">"I am a 凡人"</span>);
+</code></pre>
+<h4 id="-">打印提示消息</h4>
+<p>代码：</p>
+<pre><code class="hljs coffeescript"><span class="hljs-built_in">console</span>.info(<span class="hljs-string">"Yes, you arm a 凡人"</span>);
+</code></pre>
+<h4 id="-">打印警告消息</h4>
+<p>代码：</p>
+<pre><code class="hljs coffeescript"><span class="hljs-built_in">console</span>.warn(<span class="hljs-string">"凡人你居然敢窥视我"</span>);
+</code></pre>
+<h4 id="-">打印错误消息</h4>
+<p>代码：</p>
+<pre><code class="hljs coffeescript"><span class="hljs-built_in">console</span>.error(<span class="hljs-string">"天兵天将，把这个凡人给我打入地狱"</span>);
+</code></pre>
+<h4 id="-">打印调试信息</h4>
+<pre><code class="hljs coffeescript"><span class="hljs-built_in">console</span>.debug(<span class="hljs-string">"我就是传说中的debug"</span>);
+</code></pre>
+<h3 id="2-">2.上帝视角</h3>
+<h4 id="-">查看所有方法</h4>
+<p><code>console</code> 除了上面的几个方法还有什么方法呢？<code>log</code> 除了能打印字符串外，还能打印出对象，我们可以利用<code>console.log</code> 打印自己。</p>
+<p>代码：</p>
+<pre><code class="hljs coffeescript"><span class="hljs-built_in">console</span>.log(<span class="hljs-built_in">console</span>);
+</code></pre>
+<p>输出：</p>
+<pre><code class="hljs css"><span class="hljs-selector-tag">Object</span> {
+    <span class="hljs-attribute">assert</span>: ...,
+    clear: ...,
+    count: ...,
+    debug: ...,
+    dir: ...,
+    dirxml: ...,
+    error: ...,
+    group: ...,
+    groupCollapsed: ...,
+    groupEnd: ...,
+    info: ...,
+    log: ...,
+    markTimeline: ...,
+    profile: ...,
+    profileEnd: ...,
+    table: ...,
+    time: ...,
+    timeEnd: ...,
+    timeStamp: ...,
+    timeline: ...,
+    timelineEnd: ...,
+    trace: ...,
+    warn: ...
+}
+</code></pre>
+<p>啊咧咧？怎么这么多方法。其实上面的 <code>console</code> 方法 <code>不一定每个浏览器</code> 都有实现，我这边使用的是 <code>chrome浏览器</code> 。所以说，这个特性是非标准的，请尽量不要在 <code>生产环境</code> 中使用它。</p>
+<p>但是我们可以在 <code>开发环境</code> 中，<code>合理的利用</code> 这些方法来帮助我们开发。</p>
+<h4 id="-">清理控制台</h4>
+<p>如果我们在控制台调试的时候，难免 <code>强迫症</code> 发作想清理掉已经乱七八糟的控制台。浏览器和命令行 <code>clear</code> 一样提供了一个清理函数 <code>console.clear()</code> 。</p>
+<pre><code class="hljs coffeescript"><span class="hljs-built_in">console</span>.clear()
+</code></pre>
+<p>当然我们也可以用 <code>chrome</code> 的 <code>command line api</code> 来清理控制台。</p>
+<pre><code class="hljs">clear()
+</code></pre>
+<p>又或者可以使用按键Mac上 <code>cmd + k</code> ，Win <code>ctrl + l</code>（我用的是<code>chrome浏览器</code>）。</p>
+<h4 id="-">分组</h4>
+<p>当代码非常长，或者我们需要把一个函数，或者一个文件中的函数等区分出来。我们可以使用分组来实现。</p>
+<p>代码：</p>
+<pre><code class="hljs coffeescript"><span class="hljs-built_in">console</span>.group(<span class="hljs-string">'凡人'</span>);
+<span class="hljs-built_in">console</span>.log(<span class="hljs-string">"手"</span>);
+<span class="hljs-built_in">console</span>.log(<span class="hljs-string">"脚"</span>);
+<span class="hljs-built_in">console</span>.groupEnd();
+
+<span class="hljs-built_in">console</span>.group(<span class="hljs-string">'神'</span>);
+<span class="hljs-built_in">console</span>.log(<span class="hljs-string">"法力无边"</span>);
+<span class="hljs-built_in">console</span>.log(<span class="hljs-string">"腾云架雾"</span>);
+<span class="hljs-built_in">console</span>.groupEnd();
+</code></pre>
+<p>输出：</p>
+<p><img src="https://segmentfault.com/img/bVCmKx" alt="" /></p>
+<p>如果想要输出为折叠，我们可以使用 <code>console.groupCollapsed</code> ，用法和 <code>console.group</code> 类似。</p>
+<h4 id="-">查看对象信息</h4>
+<p>有时候我们需要打印出对象信息,可以使用 <code>console.log</code> 来进行简单的输出。</p>
+<p>代码：</p>
+<pre><code class="hljs javascript"><span class="hljs-keyword">var</span> person = {
+    <span class="hljs-attr">head</span>: <span class="hljs-number">1</span>,
+    <span class="hljs-attr">hand</span>: <span class="hljs-number">2</span>,
+    <span class="hljs-attr">leg</span>: <span class="hljs-number">2</span>
+};
+<span class="hljs-built_in">console</span>.log(person);
+</code></pre>
+<p>呜呜，可是这个显示得好丑，我们这个时候就可以使用传说中的神器 <code>console.table</code> 来帮助我们清楚的显示 <code>关联数组信息</code>。</p>
+<pre><code class="hljs javascript"><span class="hljs-keyword">var</span> data = [
+    {
+        <span class="hljs-string">'姓名'</span>: <span class="hljs-string">'幼儿园'</span>, 
+        <span class="hljs-string">'性别'</span>: <span class="hljs-string">'女'</span>
+    },
+    {
+        <span class="hljs-string">'姓名'</span>: <span class="hljs-string">'李狗嗨'</span>,
+        <span class="hljs-string">'数量'</span>: <span class="hljs-number">1</span>
+    }
+];
+<span class="hljs-built_in">console</span>.table(data);
+</code></pre>
+<p>输出：</p>
+<p><img src="https://segmentfault.com/img/bVCmKK" alt="" /></p>
+<p>但是如果想要看详细的对象信息，我们可以使用 <code>console.dir</code>，将一个 <code>JavaScript</code> 对象的所有属性和属性值显示成一个可交互的列表，它还能打印出函数等。</p>
+<pre><code class="hljs coffeescript"><span class="hljs-built_in">console</span>.dir(clear);
+</code></pre>
+<p>什么？你想看某个节点中的html代码？没事，我们可以用 <code>console.dirxml</code> 来查看页面中对应元素的 <code>html/xml</code> 内容。</p>
+<p>html代码：</p>
+<pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">'person'</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>I am a 凡人<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+</code></pre>
+<p>javascirpt代码：</p>
+<pre><code class="hljs javascript"><span class="hljs-keyword">var</span> person = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">'person'</span>);
+<span class="hljs-built_in">console</span>.dirxml(person)；
+</code></pre>
+<h4 id="-">性能测试</h4>
+<p>雷军粑粑老是喜欢说：“不服？跑个分。”有时候，我们也需要对代码跑个分。这个时候，我们可以使用<code>console.time</code>和<code>console.timeEnd</code>，他们可以记录代码运行所花费的时间。</p>
+<pre><code class="hljs javascript"><span class="hljs-built_in">console</span>.time(<span class="hljs-string">"神机妙算"</span>);
+(<span class="hljs-function"><span class="hljs-keyword">function</span> () </span>{
+    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">var</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">10</span>; i++) {
+        <span class="hljs-keyword">var</span> sum = (<span class="hljs-function"><span class="hljs-keyword">function</span> () </span>{
+            <span class="hljs-keyword">var</span> flog = <span class="hljs-number">0</span>;
+            <span class="hljs-keyword">for</span>(<span class="hljs-keyword">var</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">10</span>; i++) {
+                flog+=i;
+            }
+        })();
+    }
+})();
+<span class="hljs-built_in">console</span>.timeEnd(<span class="hljs-string">"神机妙算"</span>);
+</code></pre>
+<p>啊咧咧？你这个顶多就是 <code>计时器</code> 怎么能说是 <code>性能测试</code> 。客官别急，我们这还有一个叫做 <code>console.profile</code> 和<code>console.profileEnd</code> 姐妹呢~~</p>
+<pre><code class="hljs javascript"><span class="hljs-built_in">console</span>.profile(<span class="hljs-string">"神机妙算"</span>);
+(<span class="hljs-function"><span class="hljs-keyword">function</span> () </span>{
+    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">var</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">10</span>; i++) {
+        <span class="hljs-keyword">var</span> sum = (<span class="hljs-function"><span class="hljs-keyword">function</span> () </span>{
+            <span class="hljs-keyword">var</span> flog = <span class="hljs-number">0</span>;
+            <span class="hljs-keyword">for</span>(<span class="hljs-keyword">var</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">10</span>; i++) {
+                flog+=i;
+            }
+        })();
+    }
+})();
+<span class="hljs-built_in">console</span>.profileEnd(<span class="hljs-string">"神机妙算"</span>);
+</code></pre>
+<p>输出会显示在 <code>profile</code></p>
+<p><img src="https://segmentfault.com/img/bVCmKN" alt="" /></p>
+<p>什么还是不够？你还想知道运行时的结果栈？可以可以，我们这还有一位 <code>console.trace</code> 哦。他可以看透大爷你的一局一动哦。 代码：</p>
+<pre><code class="hljs javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">add</span>(<span class="hljs-params">num</span>) </span>{
+    <span class="hljs-keyword">if</span> (<span class="hljs-number">0</span> &lt; num) {
+        <span class="hljs-built_in">console</span>.trace(<span class="hljs-string">"现在num的值为"</span>, num);
+        <span class="hljs-keyword">return</span> num + add(num - <span class="hljs-number">1</span>);
+    } <span class="hljs-keyword">else</span> {
+        <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
+    }
+}
+
+<span class="hljs-keyword">var</span> a =<span class="hljs-number">3</span>;
+add(<span class="hljs-number">3</span>);
+</code></pre>
+<p>输出：</p>
+<p><img src="https://segmentfault.com/img/bVCmKS" alt="" /></p>
+<h4 id="-">判断真假</h4>
+<p>平时我们在写代码是时候，经常需要判断一下当前值的真假情况，使用if或者三元表达式来达到目的。我们现在也可以使用 <code>console.assert</code> 来判断，该方法会在条件为错误时，返回一个 <code>console.error</code> 的输出。</p>
+<pre><code class="hljs coffeescript"><span class="hljs-built_in">console</span>.assert(<span class="hljs-number">1</span> == <span class="hljs-number">1</span>);
+<span class="hljs-built_in">console</span>.assert(<span class="hljs-number">1</span> == <span class="hljs-number">0</span>);
+<span class="hljs-built_in">console</span>.assert(!(<span class="hljs-number">1</span> == <span class="hljs-number">0</span>));
+</code></pre>
+<h4 id="-">统计次数</h4>
+<p>有时候我们需要统计一个函数或者被调用了几次，我们通常会增加一个变量 <code>count</code> 来记录，然后在控制台中查看。这样相当的麻烦，我们可以使用 <code>console.count</code> 函数来帮忙我们记录次数，并输出。</p>
+<pre><code class="hljs javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">hi</span>(<span class="hljs-params">name</span>) </span>{
+    <span class="hljs-built_in">console</span>.count(name);
+    <span class="hljs-keyword">return</span> <span class="hljs-string">"hi "</span> + name;
+}
+
+<span class="hljs-keyword">for</span>(<span class="hljs-keyword">var</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">10</span>; i++) {
+    <span class="hljs-keyword">if</span>(i &lt; <span class="hljs-number">4</span>) {
+        hi(<span class="hljs-string">"person"</span>);
+    } <span class="hljs-keyword">else</span> {
+        hi(<span class="hljs-string">"god"</span>);
+    }
+}
+</code></pre>
+<h3 id="-">总结</h3>
+<p><code>console</code> 中有很多对我们调试代码有帮助的函数，我们可以在开发环境中配合 <code>console</code> 来调试代码，使得我们测试更加便利。</p>
+</div>
+<footer class="entry-footer">
+<div class="share"><a class="share_weibo" title="分享到新浪微博" rel="nofollow"><i class="icon-weibo"></i>分享</a></div>
+<div class="creative-commons">
+<p>文章最后编辑时间为: 2016/10/21 23:10</p>
+<p>本文由 <a href="https://iiong.com/" target="_blank"  rel="nofollow" >淮城一只猫</a> 创作，采用 <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank" rel="nofollow">知识共享署名 4.0</a>国际许可协议进行许可</p>
+<p>可自由转载、引用，但需署名作者且注明文章出处</p>
+</div>
+</footer>
+			</div><!-- .entry-content -->
+		<footer class="post-footer">
+	<div class="post-lincenses"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh"  target="_blank" rel="nofollow">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a></div>
+	<div class="post-tags">
+			</div>
+    
+<div class="post-like">
+<a href="javascript:;" data-action="ding" data-id="346" class="specsZan ">
+	<i class="iconfont">&#xe669;</i> <span class="count">
+		0</span>
+	</a>
+</div>
+		
+<div class="post-share">
+<ul class="sharehidden">
+	<li><a href="http://www.jiathis.com/send/?webid=weixin&url=https://blog.lengsir.tk/you-dont-know-console.html&title=你所不知道的 Console" onclick="window.open(this.href, 'renren-share', 'width=490,height=700');return false;" class="s-weixin"><img src="https://blog.lengsir.tk/wp-content/themes/Siren/images/sns/wechat.png"/></a></li>
+	<li><a href="http://www.jiathis.com/send/?webid=qzone&url=https://blog.lengsir.tk/you-dont-know-console.html&title=你所不知道的 Console" onclick="window.open(this.href, 'weibo-share', 'width=730,height=500');return false;" class="s-qq"><img src="https://blog.lengsir.tk/wp-content/themes/Siren/images/sns/qzone.png"/></a></li>
+	<li><a href="http://www.jiathis.com/send/?webid=tsina&url=https://blog.lengsir.tk/you-dont-know-console.html&title=你所不知道的 Console" onclick="window.open(this.href, 'weibo-share', 'width=550,height=235');return false;" class="s-sina"><img src="https://blog.lengsir.tk/wp-content/themes/Siren/images/sns/sina.png"/></a></li>
+	<li><a href="http://www.jiathis.com/send/?webid=douban&url=https://blog.lengsir.tk/you-dont-know-console.html&title=你所不知道的 Console" onclick="window.open(this.href, 'renren-share', 'width=490,height=600');return false;" class="s-douban"><img src="https://blog.lengsir.tk/wp-content/themes/Siren/images/sns/douban.png"/></a></li>
+	</ul>
+	<i class="iconfont show-share">&#xe6eb;</i>
+</div>
+	</footer><!-- .entry-footer -->
+</article><!-- #post-## -->
+<section class="post-squares nextprev">
+	<div class="post-nepre half previous">
+		<a href="https://blog.lengsir.tk/smpml.html" rel="prev"><div class="background" style="background-image:url(https://blog.lengsir.tk/wp-content/uploads/2017/02/20131006224911925.jpg);"></div><span class="label">Previous Post</span><div class="info"><h3>树莓派上的软件安装和卸载命令汇总</h3><hr></div></a>	</div>
+	<div class="post-nepre half next">
+		<a href="https://blog.lengsir.tk/wordpress-theme-siren.html" rel="next"><div class="background" style="background-image:url(https://blog.lengsir.tk/wp-content/uploads/2017/03/201610191509-1024x576.jpg);"></div><span class="label">Next Post</span><div class="info"><h3>WordPress Theme Siren</h3><hr></div></a>	</div>
+</section>
+	<section class="author-profile">
+		<div class="info" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+			<a href="https://blog.lengsir.tk/author/leng/" class="profile gravatar"><img src="https://secure.gravatar.com/avatar/8666821ab3de1dc3a2f543dcd2a9b5ae?s=96&r=g" itemprop="image" alt="lengsir" height="70" width="70"></a>
+			<div class="meta">
+				<span class="title">Author</span>	
+				<h3 itemprop="name">
+					<a href="https://blog.lengsir.tk/author/leng/" itemprop="url" rel="author">lengsir</a>
+				</h3>						
+			</div>
+		</div>
+		<hr>
+		<p><i class="iconfont">&#xe761;</i>以此为傲，以此谋生，以此热爱且不忘初衷。</p>
+	</section>
+
+		</main><!-- #main -->
+	</div><!-- #primary -->
+	</div><!-- #content -->
+	
+	
+	<section id="comments" class="comments">		
+		<div class="comments-main">
+		 <h3 id="comments-list-title">Comments | <span class="noticom">评论 </span></h3> 
+		<div id="loading-comments"><span></span></div>
+			
+				<ul class="commentwrap">
+					<div id="gitmentContainercontainer"></div>
+<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+<script>
+var gitment = new Gitment({
+  //id: '页面 ID', // 可选。默认为 location.href
+  owner: 'Lengsir',
+  repo: 'gitblogcomment',
+  oauth: {
+    client_id: '97b174d5a85bd86504e2',
+    client_secret: '9be88aef67728129eb39c368b100109690231260',
+  },
+})
+gitment.render('gitmentContainercontainer')
+</script>	
+</ul>
+<nav id="comments-navi">
+</nav>
+		</div>
+	</section>
+	</div><!-- #page Pjax container-->
+
+	<footer id="colophon" class="site-footer" role="contentinfo">
+		<div class="site-info">
+			<div class="footertext">
+				<p class="foo-logo" style="background-image: url('https://blog.lengsir.tk/wp-content/themes/Siren/images/f-logo.png');"></p>
+				<p>&copy; 2016-至今</p>
+			</div>
+			<div class="footer-device">
+			<a href="/sitemap" target="_blank" rel="nofollow">Sitemap</a> &nbsp; <a href="http://www.akina.pw/themeakina" rel="designer" target="_blank" rel="nofollow">Theme</a> &nbsp; <a href="https://wordpress.org/" target="_blank" rel="nofollow">WordPress</a> &nbsp; 			</div>
+		</div><!-- .site-info -->
+	</footer><!-- #colophon -->
+	<div class="openNav">
+		<div class="iconflat">	 
+			<div class="icon"></div>
+		</div>
+		<div class="site-branding">
+						<h1 class="site-title"><a href="https://blog.lengsir.tk" >Dreaming</a></h1>
+					</div>
+	</div><!-- m-nav-bar -->
+	</section><!-- #section -->
+	<!-- m-nav-center -->
+	<div id="mo-nav">
+		<div class="m-avatar">
+						<img src="https://blog.lengsir.tk/wp-content/themes/Siren/images/avatar.jpg">
+		</div>
+		<div class="m-search">
+			<form class="m-search-form" method="get" action="https://blog.lengsir.tk" role="search">
+				<input class="m-search-input" type="search" name="s" placeholder="搜索..." required>
+			</form>
+		</div>
+		<ul id="menu-%e6%a0%87%e9%a2%98%e6%a0%8f-1" class="menu"><li><a href="https://blog.lengsir.tk/welcome/">起始页</a>
+<ul class="sub-menu">
+	<li><a href="https://blog.lengsir.tk/login/">登陆</a></li>
+	<li><a href="https://blog.lengsir.tk/register/">注册</a></li>
+</ul>
+</li>
+<li><a rel="nofllow" href="https://blog.lengsir.tk/archives/">归档</a>
+<ul class="sub-menu">
+	<li><a href="https://blog.lengsir.tk/articles/">文摘</a></li>
+	<li><a href="https://blog.lengsir.tk/rizhi/">日志</a></li>
+	<li class="current-post-ancestor current-menu-parent"><a href="https://blog.lengsir.tk/xp/">经验</a></li>
+	<li><a href="https://blog.lengsir.tk/works/">Works</a></li>
+</ul>
+</li>
+<li><a rel="nofllow" href="https://blog.lengsir.tk/about/">关于</a>
+<ul class="sub-menu">
+	<li><a href="/me">个人页</a></li>
+</ul>
+</li>
+<li><a rel="nofllow" href="https://blog.lengsir.tk/links/">邻居</a>
+<ul class="sub-menu">
+	<li><a rel="nofllow" href="https://em.lenget.com">易梦空间</a></li>
+	<li><a href="https://blog.lengsir.tk/music/">音乐搜索</a></li>
+	<li><a href="https://blog.lengsir.tk/sitemap/">网站地图</a></li>
+	<li><a href="https://em.lenget.com/tools/bizhi/">毒霸壁纸</a></li>
+</ul>
+</li>
+<li><a href="https://blog.lengsir.tk/findyourself/">发现自己</a></li>
+</ul>	</div><!-- m-nav-center end -->
+	<a href="#" class="cd-top"></a>
+	<!-- search start -->
+	<form class="js-search search-form search-form--modal" method="get" action="https://blog.lengsir.tk" role="search">
+		<div class="search-form__inner">
+			<div>
+				<p class="micro mb-">输入后按回车搜索 ...</p>
+				<i class="iconfont">&#xe65c;</i>
+				<input class="text-input" type="search" name="s" placeholder="Search" required>
+			</div>
+		</div>
+		<div class="search_close"></div>
+	</form>
+	<!-- search end -->
+<script type='text/javascript' src='https://blog.lengsir.tk/wp-content/themes/Siren/js/jquery.min.js?ver=2.0.6.170420'></script>
+<script type='text/javascript' src='https://blog.lengsir.tk/wp-content/themes/Siren/js/jquery.pjax.js?ver=2.0.6.170420'></script>
+<script type='text/javascript' src='https://blog.lengsir.tk/wp-content/themes/Siren/js/input.min.js?ver=2.0.6.170420'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var Poi = {"pjax":"","movies":"close","windowheight":"auto","codelamp":"close","ajaxurl":"https:\/\/blog.lengsir.tk\/wp-admin\/admin-ajax.php","order":"asc","formpostion":"bottom"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://blog.lengsir.tk/wp-content/themes/Siren/js/app.js?ver=2.0.6.170420'></script>
+<script type='text/javascript' src='https://blog.lengsir.tk/wp-includes/js/comment-reply.min.js?ver=4.9.5'></script>
+<script type='text/javascript' color='0,255,0' zIndex='-1' opacity='0.5' count='99' src='//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js'></script>
+</body>
+</html>

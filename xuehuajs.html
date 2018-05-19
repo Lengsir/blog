@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<base href="https://blog.lengsir.tk" />
+
+<!--<link rel='stylesheet' id='siren-css'  href='https://e.lenget.com/wordpress/wp-content/themes/Siren/style.css?ver=2.0.6.170420' type='text/css' media='all' />-->
+  <!--
+  <script type="text/javascript">
+if (document.location.protocol != "https:") { 
+        location.href = location.href.replace(/^http:/,"https:");
+}
+</script>-->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title itemprop="name">雪花特效JS代码(网站下雪效果) &#8211; Dreaming</title>
+<link rel="shortcut icon" href="https://blog.lengsir.tk/wp-content/themes/Siren/images/favicon.ico"/> 
+<link rel='dns-prefetch' href='//s.w.org' />
+<link rel='stylesheet' id='siren-css'  href='https://blog.lengsir.tk/wp-content/themes/Siren/style.css?ver=2.0.6.170420' type='text/css' media='all' />
+<link rel='https://api.w.org/' href='https://blog.lengsir.tk/wp-json/' />
+<link rel='prev' title='你为什么要用 chrome' href='https://blog.lengsir.tk/chrome.html' />
+<link rel='next' title='VIP视频免费看(部分无效)' href='https://blog.lengsir.tk/spvip.html' />
+<link rel="canonical" href="https://blog.lengsir.tk/xuehuajs.html" />
+<link rel='shortlink' href='https://blog.lengsir.tk/?p=223' />
+<style type="text/css">
+.author-profile i , .post-like a , .post-share .show-share , .sub-text , .we-info a , span.sitename , .post-more i:hover , #pagination a:hover , .post-content a:hover , .float-content i:hover{ color: #FE9600 }
+.feature i , .feature-title span , .download , .navigator i:hover , .links ul li:before , .ar-time i , span.ar-circle , .object , .comment .comment-reply-link , .siren-checkbox-radio:checked + .siren-checkbox-radioInput:after { background: #FE9600 }
+::-webkit-scrollbar-thumb { background: #FE9600 }
+.download , .navigator i:hover , .link-title , .links ul li:hover , #pagination a:hover , .comment-respond input[type='submit']:hover { border-color: #FE9600 }
+.entry-content a:hover , .site-info a:hover , .comment h4 a , #comments-navi a.prev , #comments-navi a.next , .comment h4 a:hover , .site-top ul li a:hover , .entry-title a:hover , #archives-temp h3 , span.page-numbers.current , .sorry li a:hover , .site-title a:hover , i.iconfont.js-toggle-search.iconsearch:hover , .comment-respond input[type='submit']:hover { color: #FE9600 }
+.comments .comments-main {display:block !important;}
+.comments .comments-hidden {display:none !important;}
+</style>
+<link rel="icon" href="https://blog.lengsir.tk/wp-content/uploads/2016/12/cropped-danbo-32x32.jpg" sizes="32x32" />
+<link rel="icon" href="https://blog.lengsir.tk/wp-content/uploads/2016/12/cropped-danbo-192x192.jpg" sizes="192x192" />
+<link rel="apple-touch-icon-precomposed" href="https://blog.lengsir.tk/wp-content/uploads/2016/12/cropped-danbo-180x180.jpg" />
+<meta name="msapplication-TileImage" content="https://blog.lengsir.tk/wp-content/uploads/2016/12/cropped-danbo-270x270.jpg" />
+		<style type="text/css" id="wp-custom-css">
+			/*
+您可以在此处加入您的CSS。
+
+点击上方的帮助图标来了解更多。
+*/
+		</style>
+	<!--
+<script type="text/javascript">
+if (!!window.ActiveXObject || "ActiveXObject" in window) { //is IE?
+  alert('请抛弃万恶的IE系列浏览器吧。');
+}
+</script>
+-->
+</head>
+<body class="post-template-default single single-post postid-223 single-format-standard">
+	<section id="main-container">
+				<div class="headertop filter-nothing">
+			<figure id="centerbg" class="centerbg" style="">
+		<div class="focusinfo">
+   		         <div class="header-tou" ><a href="https://blog.lengsir.tk"><img src="https://blog.lengsir.tk/wp-content/themes/Siren/images/avatar.jpg"></a></div>	
+      			<div class="header-info"><p>以此为傲，以此谋生，以此热爱且不忘初衷。</p></div>
+		<div class="top-social">
+		 
+					
+					
+			
+									
+			
+							
+				
+	  	</div>		 
+	</div>
+	</figure>
+<div id="video-container" style="display:none;"><video id="bgvideo" class="video" video-name="" src="" width="auto" preload="auto"></video><div id="video-btn" class="loadvideo videolive"></div><div id="video-add"></div><div class="video-stu"></div></div>		</div>	
+				<div id="page" class="site wrapper">
+			<header class="site-header" role="banner">
+				<div class="site-top">
+					<div class="site-branding">
+												<h1 class="site-title"><a href="https://blog.lengsir.tk" >Dreaming</a></h1>	
+						<!-- logo end -->
+					</div><!-- .site-branding -->
+					  <div class="header-user-avatar">
+    <a href="https://blog.lengsir.tk/wp-login.php">
+      <img src="https://blog.lengsir.tk/wp-content/themes/Siren/images/none.png" width="30" height="30">
+    </a>
+    <div class="header-user-menu">
+      <div class="herder-user-name no-logged">Whether to log in now ?
+        <a href="https://blog.lengsir.tk/wp-login.php">Sign in</a>
+      </div>
+    </div>
+  </div>
+  					<div class="lower">						<div id="show-nav" class="showNav">
+							<div class="line line1"></div>
+							<div class="line line2"></div>
+							<div class="line line3"></div>
+						</div>						<nav><ul id="menu-%e6%a0%87%e9%a2%98%e6%a0%8f" class="menu"><li><a href="https://blog.lengsir.tk/welcome/">起始页</a>
+<ul class="sub-menu">
+	<li><a href="https://blog.lengsir.tk/login/">登陆</a></li>
+	<li><a href="https://blog.lengsir.tk/register/">注册</a></li>
+</ul>
+</li>
+<li><a rel="nofllow" href="https://blog.lengsir.tk/archives/">归档</a>
+<ul class="sub-menu">
+	<li><a href="https://blog.lengsir.tk/articles/">文摘</a></li>
+	<li><a href="https://blog.lengsir.tk/rizhi/">日志</a></li>
+	<li class="current-post-ancestor current-menu-parent"><a href="https://blog.lengsir.tk/xp/">经验</a></li>
+	<li><a href="https://blog.lengsir.tk/works/">Works</a></li>
+</ul>
+</li>
+<li><a rel="nofllow" href="https://blog.lengsir.tk/about/">关于</a>
+<ul class="sub-menu">
+	<li><a href="/me">个人页</a></li>
+</ul>
+</li>
+<li><a rel="nofllow" href="https://blog.lengsir.tk/links/">邻居</a>
+<ul class="sub-menu">
+	<li><a rel="nofllow" href="https://em.lenget.com">易梦空间</a></li>
+	<li><a href="https://blog.lengsir.tk/music/">音乐搜索</a></li>
+	<li><a href="https://blog.lengsir.tk/sitemap/">网站地图</a></li>
+	<li><a href="https://em.lenget.com/tools/bizhi/">毒霸壁纸</a></li>
+</ul>
+</li>
+<li><a href="https://blog.lengsir.tk/findyourself/">发现自己</a></li>
+</ul></nav><!-- #site-navigation -->
+					</div>	
+				</div>
+			</header><!-- #masthead -->
+			  <div class="pattern-center single-center">
+    <div class="pattern-attachment-img" style="background-image: url(https://blog.lengsir.tk/wp-content/uploads/2017/01/google.gif)"> </div>
+    <header class="pattern-header single-header"><h1 class="entry-title">雪花特效JS代码(网站下雪效果)</h1><p class="entry-census"><span><a href="https://blog.lengsir.tk/author/leng/"><img src="https://secure.gravatar.com/avatar/8666821ab3de1dc3a2f543dcd2a9b5ae?s=96&r=g"></a></span><span><a href="https://blog.lengsir.tk/author/leng/">lengsir</a></span><span class="bull">·</span>2017-01-13<span class="bull">·</span>92 次阅读</p></header>
+  </div>
+  		    <div id="content" class="site-content">	<div id="primary" class="content-area">
+		<main id="main" class="site-main" role="main">
+		
+<article id="post-223" class="post-223 post type-post status-publish format-standard has-post-thumbnail hentry category-xp tag-texiao tag-xuehua">
+		<div class="entry-content">
+		<p>本文系转载<br />
+作者：小天蝎<br />
+链接：https://www.ilovetoo.cc/xuehua/</p>
+<h3>特效代码一：</h3>
+<p><span id="more-103"></span></p>
+<pre class="pure-highlightjs"><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"text/javascript"</span>&gt;</span><span class="javascript">
+(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">$</span>)</span>{
+	$.fn.snow = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">options</span>)</span>{
+	<span class="hljs-keyword">var</span> $flake = $(<span class="hljs-string">'&lt;div id="snowbox" /&gt;'</span>).css({<span class="hljs-string">'position'</span>: <span class="hljs-string">'absolute'</span>,<span class="hljs-string">'z-index'</span>:<span class="hljs-string">'9999'</span>, <span class="hljs-string">'top'</span>: <span class="hljs-string">'-50px'</span>}).html(<span class="hljs-string">'&amp;#10052;'</span>),
+	documentHeight 	= $(<span class="hljs-built_in">document</span>).height(),
+	documentWidth	= $(<span class="hljs-built_in">document</span>).width(),
+	defaults = {
+		minSize		: <span class="hljs-number">10</span>,
+		maxSize		: <span class="hljs-number">20</span>,
+		newOn		: <span class="hljs-number">1000</span>,
+		flakeColor	: <span class="hljs-string">"#AFDAEF"</span> <span class="hljs-comment">/* 此处可以定义雪花颜色，若要白色可以改为#FFFFFF */</span>
+	},
+	options	= $.extend({}, defaults, options);
+	<span class="hljs-keyword">var</span> interval= setInterval( <span class="hljs-function"><span class="hljs-keyword">function</span>()</span>{
+	<span class="hljs-keyword">var</span> startPositionLeft = <span class="hljs-built_in">Math</span>.random() * documentWidth - <span class="hljs-number">100</span>,
+	startOpacity = <span class="hljs-number">0.5</span> + <span class="hljs-built_in">Math</span>.random(),
+	sizeFlake = options.minSize + <span class="hljs-built_in">Math</span>.random() * options.maxSize,
+	endPositionTop = documentHeight - <span class="hljs-number">200</span>,
+	endPositionLeft = startPositionLeft - <span class="hljs-number">500</span> + <span class="hljs-built_in">Math</span>.random() * <span class="hljs-number">500</span>,
+	durationFall = documentHeight * <span class="hljs-number">10</span> + <span class="hljs-built_in">Math</span>.random() * <span class="hljs-number">5000</span>;
+	$flake.clone().appendTo(<span class="hljs-string">'body'</span>).css({
+		left: startPositionLeft,
+		opacity: startOpacity,
+		<span class="hljs-string">'font-size'</span>: sizeFlake,
+		color: options.flakeColor
+	}).animate({
+		top: endPositionTop,
+		left: endPositionLeft,
+		opacity: <span class="hljs-number">0.2</span>
+	},durationFall,<span class="hljs-string">'linear'</span>,<span class="hljs-function"><span class="hljs-keyword">function</span>()</span>{
+		$(<span class="hljs-keyword">this</span>).remove()
+	});
+	}, options.newOn);
+    };
+})(jQuery);
+$(<span class="hljs-function"><span class="hljs-keyword">function</span>()</span>{
+    $.fn.snow({ 
+	    minSize: <span class="hljs-number">5</span>, <span class="hljs-comment">/* 定义雪花最小尺寸 */</span>
+	    maxSize: <span class="hljs-number">50</span>,<span class="hljs-comment">/* 定义雪花最大尺寸 */</span>
+	    newOn: <span class="hljs-number">300</span>  <span class="hljs-comment">/* 定义密集程度，数字越小越密集 */</span>
+    });
+});
+</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;
+
+</span></code></pre>
+<p><span id="more-223"></span></p>
+<h3>特效代码二：</h3>
+<p>&nbsp;</p>
+<pre class="pure-highlightjs"><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"text/javascript"</span>&gt;</span><span class="javascript">
+    <span class="hljs-comment">/* 控制下雪 */</span>
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">snowFall</span>(<span class="hljs-params">snow</span>) </span>{
+        <span class="hljs-comment">/* 可配置属性 */</span>
+        snow = snow || {};
+        <span class="hljs-keyword">this</span>.maxFlake = snow.maxFlake || <span class="hljs-number">200</span>;   <span class="hljs-comment">/* 最多片数 */</span>
+        <span class="hljs-keyword">this</span>.flakeSize = snow.flakeSize || <span class="hljs-number">10</span>;  <span class="hljs-comment">/* 雪花形状 */</span>
+        <span class="hljs-keyword">this</span>.fallSpeed = snow.fallSpeed || <span class="hljs-number">1</span>;   <span class="hljs-comment">/* 坠落速度 */</span>
+    }
+    <span class="hljs-comment">/* 兼容写法 */</span>
+    requestAnimationFrame = <span class="hljs-built_in">window</span>.requestAnimationFrame ||
+        <span class="hljs-built_in">window</span>.mozRequestAnimationFrame ||
+        <span class="hljs-built_in">window</span>.webkitRequestAnimationFrame ||
+        <span class="hljs-built_in">window</span>.msRequestAnimationFrame ||
+        <span class="hljs-built_in">window</span>.oRequestAnimationFrame ||
+        <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">callback</span>) </span>{ setTimeout(callback, <span class="hljs-number">1000</span> / <span class="hljs-number">60</span>); };
+ 
+    cancelAnimationFrame = <span class="hljs-built_in">window</span>.cancelAnimationFrame ||
+        <span class="hljs-built_in">window</span>.mozCancelAnimationFrame ||
+        <span class="hljs-built_in">window</span>.webkitCancelAnimationFrame ||
+        <span class="hljs-built_in">window</span>.msCancelAnimationFrame ||
+        <span class="hljs-built_in">window</span>.oCancelAnimationFrame;
+    <span class="hljs-comment">/* 开始下雪 */</span>
+    snowFall.prototype.start = <span class="hljs-function"><span class="hljs-keyword">function</span>()</span>{
+        <span class="hljs-comment">/* 创建画布 */</span>
+        snowCanvas.apply(<span class="hljs-keyword">this</span>);
+        <span class="hljs-comment">/* 创建雪花形状 */</span>
+        createFlakes.apply(<span class="hljs-keyword">this</span>);
+        <span class="hljs-comment">/* 画雪 */</span>
+        drawSnow.apply(<span class="hljs-keyword">this</span>)
+    }
+    <span class="hljs-comment">/* 创建画布 */</span>
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">snowCanvas</span>() </span>{
+        <span class="hljs-comment">/* 添加Dom结点 */</span>
+        <span class="hljs-keyword">var</span> snowcanvas = <span class="hljs-built_in">document</span>.createElement(<span class="hljs-string">"canvas"</span>);
+        snowcanvas.id = <span class="hljs-string">"snowfall"</span>;
+        snowcanvas.width = <span class="hljs-built_in">window</span>.innerWidth;
+        snowcanvas.height = <span class="hljs-built_in">document</span>.body.clientHeight;
+        snowcanvas.setAttribute(<span class="hljs-string">"style"</span>, <span class="hljs-string">"position:absolute; top: 0; left: 0; z-index: 1; pointer-events: none;"</span>);
+        <span class="hljs-built_in">document</span>.getElementsByTagName(<span class="hljs-string">"body"</span>)[<span class="hljs-number">0</span>].appendChild(snowcanvas);
+        <span class="hljs-keyword">this</span>.canvas = snowcanvas;
+        <span class="hljs-keyword">this</span>.ctx = snowcanvas.getContext(<span class="hljs-string">"2d"</span>);
+        <span class="hljs-comment">/* 窗口大小改变的处理 */</span>
+        <span class="hljs-built_in">window</span>.onresize = <span class="hljs-function"><span class="hljs-keyword">function</span>() </span>{
+            snowcanvas.width = <span class="hljs-built_in">window</span>.innerWidth;
+            <span class="hljs-comment">/* snowcanvas.height = window.innerHeight */</span>
+        }
+    }
+    <span class="hljs-comment">/* 雪运动对象 */</span>
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">flakeMove</span>(<span class="hljs-params">canvasWidth, canvasHeight, flakeSize, fallSpeed</span>) </span>{
+        <span class="hljs-keyword">this</span>.x = <span class="hljs-built_in">Math</span>.floor(<span class="hljs-built_in">Math</span>.random() * canvasWidth);   <span class="hljs-comment">/* x坐标 */</span>
+        <span class="hljs-keyword">this</span>.y = <span class="hljs-built_in">Math</span>.floor(<span class="hljs-built_in">Math</span>.random() * canvasHeight);  <span class="hljs-comment">/* y坐标 */</span>
+        <span class="hljs-keyword">this</span>.size = <span class="hljs-built_in">Math</span>.random() * flakeSize + <span class="hljs-number">2</span>;          <span class="hljs-comment">/* 形状 */</span>
+        <span class="hljs-keyword">this</span>.maxSize = flakeSize;                           <span class="hljs-comment">/* 最大形状 */</span>
+        <span class="hljs-keyword">this</span>.speed = <span class="hljs-built_in">Math</span>.random() * <span class="hljs-number">1</span> + fallSpeed;         <span class="hljs-comment">/* 坠落速度 */</span>
+        <span class="hljs-keyword">this</span>.fallSpeed = fallSpeed;                         <span class="hljs-comment">/* 坠落速度 */</span>
+        <span class="hljs-keyword">this</span>.velY = <span class="hljs-keyword">this</span>.speed;                             <span class="hljs-comment">/* Y方向速度 */</span>
+        <span class="hljs-keyword">this</span>.velX = <span class="hljs-number">0</span>;                                      <span class="hljs-comment">/* X方向速度 */</span>
+        <span class="hljs-keyword">this</span>.stepSize = <span class="hljs-built_in">Math</span>.random() / <span class="hljs-number">30</span>;                 <span class="hljs-comment">/* 步长 */</span>
+        <span class="hljs-keyword">this</span>.step = <span class="hljs-number">0</span>                                       <span class="hljs-comment">/* 步数 */</span>
+    }
+    flakeMove.prototype.update = <span class="hljs-function"><span class="hljs-keyword">function</span>() </span>{
+        <span class="hljs-keyword">var</span> x = <span class="hljs-keyword">this</span>.x,
+            y = <span class="hljs-keyword">this</span>.y;
+        <span class="hljs-comment">/* 左右摆动(余弦) */</span>
+        <span class="hljs-keyword">this</span>.velX *= <span class="hljs-number">0.98</span>;
+        <span class="hljs-keyword">if</span> (<span class="hljs-keyword">this</span>.velY &lt;= <span class="hljs-keyword">this</span>.speed) {
+            <span class="hljs-keyword">this</span>.velY = <span class="hljs-keyword">this</span>.speed
+        }
+        <span class="hljs-keyword">this</span>.velX += <span class="hljs-built_in">Math</span>.cos(<span class="hljs-keyword">this</span>.step += <span class="hljs-number">.05</span>) * <span class="hljs-keyword">this</span>.stepSize;
+ 
+        <span class="hljs-keyword">this</span>.y += <span class="hljs-keyword">this</span>.velY;
+        <span class="hljs-keyword">this</span>.x += <span class="hljs-keyword">this</span>.velX;
+        <span class="hljs-comment">/* 飞出边界的处理 */</span>
+        <span class="hljs-keyword">if</span> (<span class="hljs-keyword">this</span>.x &gt;= canvas.width || <span class="hljs-keyword">this</span>.x &lt;= <span class="hljs-number">0</span> || <span class="hljs-keyword">this</span>.y &gt;= canvas.height || <span class="hljs-keyword">this</span>.y &lt;= <span class="hljs-number">0</span>) {
+            <span class="hljs-keyword">this</span>.reset(canvas.width, canvas.height)
+        }
+    };
+    <span class="hljs-comment">/* 飞出边界-放置最顶端继续坠落 */</span>
+    flakeMove.prototype.reset = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">width, height</span>) </span>{
+        <span class="hljs-keyword">this</span>.x = <span class="hljs-built_in">Math</span>.floor(<span class="hljs-built_in">Math</span>.random() * width);
+        <span class="hljs-keyword">this</span>.y = <span class="hljs-number">0</span>;
+        <span class="hljs-keyword">this</span>.size = <span class="hljs-built_in">Math</span>.random() * <span class="hljs-keyword">this</span>.maxSize + <span class="hljs-number">2</span>;
+        <span class="hljs-keyword">this</span>.speed = <span class="hljs-built_in">Math</span>.random() * <span class="hljs-number">1</span> + <span class="hljs-keyword">this</span>.fallSpeed;
+        <span class="hljs-keyword">this</span>.velY = <span class="hljs-keyword">this</span>.speed;
+        <span class="hljs-keyword">this</span>.velX = <span class="hljs-number">0</span>;
+    };
+    <span class="hljs-comment">// 渲染雪花-随机形状（此处可修改雪花颜色！！！）</span>
+    flakeMove.prototype.render = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">ctx</span>) </span>{
+        <span class="hljs-keyword">var</span> snowFlake = ctx.createRadialGradient(<span class="hljs-keyword">this</span>.x, <span class="hljs-keyword">this</span>.y, <span class="hljs-number">0</span>, <span class="hljs-keyword">this</span>.x, <span class="hljs-keyword">this</span>.y, <span class="hljs-keyword">this</span>.size);
+        snowFlake.addColorStop(<span class="hljs-number">0</span>, <span class="hljs-string">"rgba(255, 255, 255, 0.9)"</span>);  <span class="hljs-comment">/* 此处是雪花颜色，默认是白色 */</span>
+        snowFlake.addColorStop(<span class="hljs-number">.5</span>, <span class="hljs-string">"rgba(255, 255, 255, 0.5)"</span>); <span class="hljs-comment">/* 若要改为其他颜色，请自行查 */</span>
+        snowFlake.addColorStop(<span class="hljs-number">1</span>, <span class="hljs-string">"rgba(255, 255, 255, 0)"</span>);    <span class="hljs-comment">/* 找16进制的RGB 颜色代码。 */</span>
+        ctx.save();
+        ctx.fillStyle = snowFlake;
+        ctx.beginPath();
+        ctx.arc(<span class="hljs-keyword">this</span>.x, <span class="hljs-keyword">this</span>.y, <span class="hljs-keyword">this</span>.size, <span class="hljs-number">0</span>, <span class="hljs-built_in">Math</span>.PI * <span class="hljs-number">2</span>);
+        ctx.fill();
+        ctx.restore();
+    };
+    <span class="hljs-comment">/* 创建雪花-定义形状 */</span>
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">createFlakes</span>() </span>{
+        <span class="hljs-keyword">var</span> maxFlake = <span class="hljs-keyword">this</span>.maxFlake,
+            flakes = <span class="hljs-keyword">this</span>.flakes = [],
+            canvas = <span class="hljs-keyword">this</span>.canvas;
+        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> i = <span class="hljs-number">0</span>; i &lt; maxFlake; i++) {
+            flakes.push(<span class="hljs-keyword">new</span> flakeMove(canvas.width, canvas.height, <span class="hljs-keyword">this</span>.flakeSize, <span class="hljs-keyword">this</span>.fallSpeed))
+        }
+    }
+    <span class="hljs-comment">/* 画雪 */</span>
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">drawSnow</span>() </span>{
+        <span class="hljs-keyword">var</span> maxFlake = <span class="hljs-keyword">this</span>.maxFlake,
+            flakes = <span class="hljs-keyword">this</span>.flakes;
+        ctx = <span class="hljs-keyword">this</span>.ctx, canvas = <span class="hljs-keyword">this</span>.canvas, that = <span class="hljs-keyword">this</span>;
+        <span class="hljs-comment">/* 清空雪花 */</span>
+        ctx.clearRect(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, canvas.width, canvas.height);
+        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> e = <span class="hljs-number">0</span>; e &lt; maxFlake; e++) {
+            flakes[e].update();
+            flakes[e].render(ctx);
+        }
+        <span class="hljs-comment">/*  一帧一帧的画 */</span>
+        <span class="hljs-keyword">this</span>.loop = requestAnimationFrame(<span class="hljs-function"><span class="hljs-keyword">function</span>() </span>{
+            drawSnow.apply(that);
+        });
+    }
+    <span class="hljs-comment">/* 调用及控制方法 */</span>
+    <span class="hljs-keyword">var</span> snow = <span class="hljs-keyword">new</span> snowFall({maxFlake:<span class="hljs-number">500</span>});
+    snow.start();
+</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;
+
+</span></code></pre>
+<p>使用方法：</p>
+<p>方法①、复制其中一种JS代码，粘贴到网站&lt;/body&gt;标签之前即可；</p>
+<p>方法②、去掉代码前后的&lt;script **&gt;标签，然后将代码保存为js文件，最后在网站引用即可。</p>
+<p>Ps：若没效果，请确认网页是否已载入JQurey，如果没有请在下雪代码之前引入JQ即可。</p>
+<h3>本博客使用于第一种雪花的DIY版本</h3>
+</p></div>
+<p><!-- .entry-content --></p>
+<footer class="post-footer">
+<div class="post-lincenses"><a href="https://m.ilovetoo.cc"  target="_blank" rel="nofollow">其实我爱你比你想的多得多...</a></div>
+<div class="post-tags">
+			</div>
+<div class="post-like">
+<a href="javascript:;" data-action="ding" data-id="103" class="specsZan " target="_blank"  rel="nofollow" ><br />
+	<i class="iconfont">&#xe669;</i> <span class="count"><br />
+		0</span><br />
+	</a></p>
+			</div><!-- .entry-content -->
+		<footer class="post-footer">
+	<div class="post-lincenses"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh"  target="_blank" rel="nofollow">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a></div>
+	<div class="post-tags">
+		<i class="iconfont">&#xe68c;</i> <a href="https://blog.lengsir.tk/tag/texiao/" rel="tag">特效</a> <a href="https://blog.lengsir.tk/tag/xuehua/" rel="tag">雪花</a> 	</div>
+    
+<div class="post-like">
+<a href="javascript:;" data-action="ding" data-id="223" class="specsZan ">
+	<i class="iconfont">&#xe669;</i> <span class="count">
+		0</span>
+	</a>
+</div>
+		
+<div class="post-share">
+<ul class="sharehidden">
+	<li><a href="http://www.jiathis.com/send/?webid=weixin&url=https://blog.lengsir.tk/xuehuajs.html&title=雪花特效JS代码(网站下雪效果)" onclick="window.open(this.href, 'renren-share', 'width=490,height=700');return false;" class="s-weixin"><img src="https://blog.lengsir.tk/wp-content/themes/Siren/images/sns/wechat.png"/></a></li>
+	<li><a href="http://www.jiathis.com/send/?webid=qzone&url=https://blog.lengsir.tk/xuehuajs.html&title=雪花特效JS代码(网站下雪效果)" onclick="window.open(this.href, 'weibo-share', 'width=730,height=500');return false;" class="s-qq"><img src="https://blog.lengsir.tk/wp-content/themes/Siren/images/sns/qzone.png"/></a></li>
+	<li><a href="http://www.jiathis.com/send/?webid=tsina&url=https://blog.lengsir.tk/xuehuajs.html&title=雪花特效JS代码(网站下雪效果)" onclick="window.open(this.href, 'weibo-share', 'width=550,height=235');return false;" class="s-sina"><img src="https://blog.lengsir.tk/wp-content/themes/Siren/images/sns/sina.png"/></a></li>
+	<li><a href="http://www.jiathis.com/send/?webid=douban&url=https://blog.lengsir.tk/xuehuajs.html&title=雪花特效JS代码(网站下雪效果)" onclick="window.open(this.href, 'renren-share', 'width=490,height=600');return false;" class="s-douban"><img src="https://blog.lengsir.tk/wp-content/themes/Siren/images/sns/douban.png"/></a></li>
+	</ul>
+	<i class="iconfont show-share">&#xe6eb;</i>
+</div>
+	</footer><!-- .entry-footer -->
+</article><!-- #post-## -->
+<section class="post-squares nextprev">
+	<div class="post-nepre half previous">
+		<a href="https://blog.lengsir.tk/chrome.html" rel="prev"><div class="background" style="background-image:url(https://blog.lengsir.tk/wp-content/uploads/2017/01/google-1024x551.gif);"></div><span class="label">Previous Post</span><div class="info"><h3>你为什么要用 chrome</h3><hr></div></a>	</div>
+	<div class="post-nepre half next">
+		<a href="https://blog.lengsir.tk/spvip.html" rel="next"><div class="background" style="background-image:url(https://blog.lengsir.tk/wp-content/uploads/2017/01/shipinzhan-1024x206.png);"></div><span class="label">Next Post</span><div class="info"><h3>VIP视频免费看(部分无效)</h3><hr></div></a>	</div>
+</section>
+	<section class="author-profile">
+		<div class="info" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+			<a href="https://blog.lengsir.tk/author/leng/" class="profile gravatar"><img src="https://secure.gravatar.com/avatar/8666821ab3de1dc3a2f543dcd2a9b5ae?s=96&r=g" itemprop="image" alt="lengsir" height="70" width="70"></a>
+			<div class="meta">
+				<span class="title">Author</span>	
+				<h3 itemprop="name">
+					<a href="https://blog.lengsir.tk/author/leng/" itemprop="url" rel="author">lengsir</a>
+				</h3>						
+			</div>
+		</div>
+		<hr>
+		<p><i class="iconfont">&#xe761;</i>以此为傲，以此谋生，以此热爱且不忘初衷。</p>
+	</section>
+
+		</main><!-- #main -->
+	</div><!-- #primary -->
+	</div><!-- #content -->
+	
+	
+	<section id="comments" class="comments">		
+		<div class="comments-main">
+		 <h3 id="comments-list-title">Comments | <span class="noticom">评论 </span></h3> 
+		<div id="loading-comments"><span></span></div>
+			
+				<ul class="commentwrap">
+					<div id="gitmentContainercontainer"></div>
+<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+<script>
+var gitment = new Gitment({
+  //id: '页面 ID', // 可选。默认为 location.href
+  owner: 'Lengsir',
+  repo: 'gitblogcomment',
+  oauth: {
+    client_id: '97b174d5a85bd86504e2',
+    client_secret: '9be88aef67728129eb39c368b100109690231260',
+  },
+})
+gitment.render('gitmentContainercontainer')
+</script>	
+</ul>
+<nav id="comments-navi">
+</nav>
+		</div>
+	</section>
+	</div><!-- #page Pjax container-->
+
+	<footer id="colophon" class="site-footer" role="contentinfo">
+		<div class="site-info">
+			<div class="footertext">
+				<p class="foo-logo" style="background-image: url('https://blog.lengsir.tk/wp-content/themes/Siren/images/f-logo.png');"></p>
+				<p>&copy; 2016-至今</p>
+			</div>
+			<div class="footer-device">
+			<a href="/sitemap" target="_blank" rel="nofollow">Sitemap</a> &nbsp; <a href="http://www.akina.pw/themeakina" rel="designer" target="_blank" rel="nofollow">Theme</a> &nbsp; <a href="https://wordpress.org/" target="_blank" rel="nofollow">WordPress</a> &nbsp; 			</div>
+		</div><!-- .site-info -->
+	</footer><!-- #colophon -->
+	<div class="openNav">
+		<div class="iconflat">	 
+			<div class="icon"></div>
+		</div>
+		<div class="site-branding">
+						<h1 class="site-title"><a href="https://blog.lengsir.tk" >Dreaming</a></h1>
+					</div>
+	</div><!-- m-nav-bar -->
+	</section><!-- #section -->
+	<!-- m-nav-center -->
+	<div id="mo-nav">
+		<div class="m-avatar">
+						<img src="https://blog.lengsir.tk/wp-content/themes/Siren/images/avatar.jpg">
+		</div>
+		<div class="m-search">
+			<form class="m-search-form" method="get" action="https://blog.lengsir.tk" role="search">
+				<input class="m-search-input" type="search" name="s" placeholder="搜索..." required>
+			</form>
+		</div>
+		<ul id="menu-%e6%a0%87%e9%a2%98%e6%a0%8f-1" class="menu"><li><a href="https://blog.lengsir.tk/welcome/">起始页</a>
+<ul class="sub-menu">
+	<li><a href="https://blog.lengsir.tk/login/">登陆</a></li>
+	<li><a href="https://blog.lengsir.tk/register/">注册</a></li>
+</ul>
+</li>
+<li><a rel="nofllow" href="https://blog.lengsir.tk/archives/">归档</a>
+<ul class="sub-menu">
+	<li><a href="https://blog.lengsir.tk/articles/">文摘</a></li>
+	<li><a href="https://blog.lengsir.tk/rizhi/">日志</a></li>
+	<li class="current-post-ancestor current-menu-parent"><a href="https://blog.lengsir.tk/xp/">经验</a></li>
+	<li><a href="https://blog.lengsir.tk/works/">Works</a></li>
+</ul>
+</li>
+<li><a rel="nofllow" href="https://blog.lengsir.tk/about/">关于</a>
+<ul class="sub-menu">
+	<li><a href="/me">个人页</a></li>
+</ul>
+</li>
+<li><a rel="nofllow" href="https://blog.lengsir.tk/links/">邻居</a>
+<ul class="sub-menu">
+	<li><a rel="nofllow" href="https://em.lenget.com">易梦空间</a></li>
+	<li><a href="https://blog.lengsir.tk/music/">音乐搜索</a></li>
+	<li><a href="https://blog.lengsir.tk/sitemap/">网站地图</a></li>
+	<li><a href="https://em.lenget.com/tools/bizhi/">毒霸壁纸</a></li>
+</ul>
+</li>
+<li><a href="https://blog.lengsir.tk/findyourself/">发现自己</a></li>
+</ul>	</div><!-- m-nav-center end -->
+	<a href="#" class="cd-top"></a>
+	<!-- search start -->
+	<form class="js-search search-form search-form--modal" method="get" action="https://blog.lengsir.tk" role="search">
+		<div class="search-form__inner">
+			<div>
+				<p class="micro mb-">输入后按回车搜索 ...</p>
+				<i class="iconfont">&#xe65c;</i>
+				<input class="text-input" type="search" name="s" placeholder="Search" required>
+			</div>
+		</div>
+		<div class="search_close"></div>
+	</form>
+	<!-- search end -->
+<script type='text/javascript' src='https://blog.lengsir.tk/wp-content/themes/Siren/js/jquery.min.js?ver=2.0.6.170420'></script>
+<script type='text/javascript' src='https://blog.lengsir.tk/wp-content/themes/Siren/js/jquery.pjax.js?ver=2.0.6.170420'></script>
+<script type='text/javascript' src='https://blog.lengsir.tk/wp-content/themes/Siren/js/input.min.js?ver=2.0.6.170420'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var Poi = {"pjax":"","movies":"close","windowheight":"auto","codelamp":"close","ajaxurl":"https:\/\/blog.lengsir.tk\/wp-admin\/admin-ajax.php","order":"asc","formpostion":"bottom"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://blog.lengsir.tk/wp-content/themes/Siren/js/app.js?ver=2.0.6.170420'></script>
+<script type='text/javascript' src='https://blog.lengsir.tk/wp-includes/js/comment-reply.min.js?ver=4.9.5'></script>
+<script type='text/javascript' color='0,255,0' zIndex='-1' opacity='0.5' count='99' src='//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js'></script>
+</body>
+</html>
